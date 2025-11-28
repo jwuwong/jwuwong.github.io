@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Name</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Merriweather+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Desktop Navigation -->
+    <div class="desktoponly">
+        <aside>
+            <div class="header_container">
+                <nav>
+                    <ul>
+                        <li><a href="/">Your Name</a></li>
+                        <li><a href="/pdfs/cv.pdf">CV</a></li>
+                        <li><a href="/teaching/">Teaching</a></li>
+                    </ul>
+                </nav>
+                <button id="theme-toggle-desktop" class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="icon-moon">🌙</span>
+                    <span class="icon-sun">☀️</span>
+                </button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobileonly">
+        <div class="topnav-container">
+            <nav class="topnav" id="topnav">
+                <button id="theme-toggle-mobile" class="mobile-toggle theme-toggle" aria-label="Toggle dark mode">
+                    <span class="icon-moon">🌙</span>
+                    <span class="icon-sun">☀️</span>
+                </button>
+                <button class="icon" aria-expanded="false" onclick="toggleMenu(this)">
+                    ☰<span class="sr-only"> Menu</span>
+                </button>
+            </nav>
+            <div id="myLinks" class="topnav-links">
+                <a href="/">Home</a>
+                <a href="/pdfs/cv.pdf">CV</a>
+                <a href="/teaching/">Teaching</a>
+            </div>
+            <div class="grey-bar"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <article>
+            <div class="profile">
+                <!-- Left Column: Photo + Contact -->
+                <div class="profile-left">
+                    <img src="/images/profile.jpg" width="250" alt="Your Name">
+                    <p class="profile-intro">
+                        Your Name<br>
+                        Your Title<br>
+                        Your Institution<br><br>
+                        your.email@institution.edu<br>
+                        <a href="https://twitter.com/yourhandle">@yourhandle</a>
+                    </p>
+                </div>
+
+                <!-- Right Column: Bio + Papers -->
+                <div class="profile-right">
+                    <p>Brief introduction about your research interests and background.</p>
+
+                    <h4>Papers</h4>
+
+                    <!-- Paper Block Example -->
+                    <div class="paperblock">
+                        Paper Title (with <a href="#">Coauthor Name</a>)<br>
+                        <span class="journal">Journal Name, Year</span><br>
+                        <label class="collapsible">
+                            <input type="checkbox">
+                            <span class="collapser">
+                                <a>abstract</a> · 
+                                <a href="/pdfs/paper.pdf">pdf</a> · 
+                                <a href="#">cite</a>
+                            </span>
+                            <div class="collapsed">
+                                <p>Your abstract text goes here...</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <h4 style="margin-top:1.75rem">Working Papers</h4>
+                    
+                    <div class="paperblock">
+                        Another Paper Title<br>
+                        <label class="collapsible">
+                            <input type="checkbox">
+                            <span class="collapser">
+                                <a>abstract</a> · <a href="#">pdf</a>
+                            </span>
+                            <div class="collapsed">
+                                <p>Abstract text...</p>
+                            </div>
+                        </label>
+                    </div>
+                    <h4 style="margin-bottom: -0.0rem; margin-top:1.75rem">Presentations</h4>
+
+                        <h5 style="margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600;">Refereed Talks</h5>
+
+                        <div class="presentation">
+                            <span class="pres-date">January 2025</span><br>
+                            "Code Switching and Layered Indexicality: A Study of a Cantonese-English Bilingual Community"<br>
+                            <span class="venue">95th Annual Meeting of the Linguistic Society of America, Philadelphia, PA</span>
+                        </div>
+
+                        <div class="presentation">
+                            <span class="pres-date">January 2025</span><br>
+                            Adolfo Hermosillo, Jonathan WuWong, Yin Lin Tan, Irene Yi. "Intensifier Variation and Change in Salinas, California"<br>
+                            <span class="venue">95th Annual Meeting of the Linguistic Society of America, Philadelphia, PA</span>
+                        </div>
+
+                        <div class="presentation">
+                            <span class="pres-date">November 2024</span><br>
+                            Adolfo Hermosillo, Jonathan WuWong, Yin Lin Tan, Irene Yi. "A Very Subjective but Really Cool Phenomenon: Intensifier Variation and Change in Salinas, California"<br>
+                            <span class="venue">52nd New Ways of Analyzing Variation (NWAV), Miami, FL</span>
+                        </div>
+
+                        <div class="presentation">
+                            <span class="pres-date">May 2022</span><br>
+                            "Interpreters, Electoral Politics, and Language Use within Boston's Multilingual Chinatown"<br>
+                            <span class="venue">2022 Michicagoan, 23rd Annual Graduate Student Conference in Linguistic Anthropology, University of Michigan</span>
+                        </div>
+
+                        <div class="presentation">
+                            <span class="pres-date">December 2021</span><br>
+                            Lenore Grenoble & Jonathan WuWong. "Accounting for Grammatical Change and Variation Within Endangered Language Grammars: The Case of Even"<br>
+                            <span class="venue">Descriptive Grammars and Typology II, Paris, France</span>
+                        </div>
+
+                        <div class="presentation">
+                            <span class="pres-date">June 2021</span><br>
+                            Lenore Grenoble, Daria Boltokova, Emre Hakguder & Jonathan WuWong. "Understanding language shift as contact in process"<br>
+                            <span class="venue">International Congress of Arctic Social Sciences, Arkhangelsk</span>
+                        </div>
+
+                        <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">Poster Presentations</h5>
+
+                        <div class="presentation">
+                            <span class="pres-date">November 2024</span><br>
+                            "Migratory Variables: R-lessness Among Cantonese Immigrants in Boston, MA"<br>
+                            <span class="venue">52nd New Ways of Analyzing Variation (NWAV), Miami, FL</span>
+                        </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        function toggleMenu(btn) {
+            var nav = document.getElementById('topnav');
+            var isOpen = nav.classList.toggle('open');
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+
+        // Dark mode toggle
+        (function() {
+            try {
+                var storedTheme = localStorage.getItem('theme');
+                if (storedTheme === 'dark') {
+                    document.documentElement.classList.add('dark-mode');
+                }
+            } catch(e) {}
+        })();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggles = document.querySelectorAll('.theme-toggle');
+            toggles.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var isDark = document.documentElement.classList.toggle('dark-mode');
+                    try {
+                        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                    } catch(e) {}
+                });
+            });
+        });
+    </script>
+</body>
+</html>
