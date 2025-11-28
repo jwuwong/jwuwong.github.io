@@ -26,6 +26,7 @@
                 </button>
             </div>
         </aside>
+        <br><br>
     </div>
 
     <!-- Mobile Navigation -->
@@ -47,15 +48,16 @@
             </div>
             <div class="grey-bar"></div>
         </div>
+        <br><br>
     </div>
 
     <!-- Main Content -->
     <main>
         <article>
             <div class="profile">
-                <!-- Left Column: Photo + Contact -->
+                <!-- Left Column -->
                 <div class="profile-left">
-                    <img src="/images/profile.jpg" width="250" alt="Your Name">
+                    <img src="/images/profile.jpg" alt="Your Name">
                     <p class="profile-intro">
                         Your Name<br>
                         Your Title<br>
@@ -63,24 +65,22 @@
                         your.email@institution.edu<br>
                         <a href="https://twitter.com/yourhandle">@yourhandle</a>
                     </p>
+                    <p class="muted">Views expressed here are my own and not my employer's.</p>
                 </div>
 
-                <!-- Right Column: Bio + Papers -->
+                <!-- Right Column -->
                 <div class="profile-right">
-                    <p>Brief introduction about your research interests and background.</p>
+                    My work focuses on [your research areas].<br><br>
 
-                    <h4>Papers</h4>
+                    <h4 style="margin-bottom: -0.0rem;">Papers</h4>
 
-                    <!-- Paper Block Example -->
                     <div class="paperblock">
                         Paper Title (with <a href="#">Coauthor Name</a>)<br>
                         <span class="journal">Journal Name, Year</span><br>
                         <label class="collapsible">
                             <input type="checkbox">
                             <span class="collapser">
-                                <a>abstract</a> · 
-                                <a href="/pdfs/paper.pdf">pdf</a> · 
-                                <a href="#">cite</a>
+                                <a>abstract</a> · <a href="/pdfs/paper.pdf">pdf</a> · <a href="#">cite</a>
                             </span>
                             <div class="collapsed">
                                 <p>Your abstract text goes here...</p>
@@ -88,10 +88,10 @@
                         </label>
                     </div>
 
-                    <h4 style="margin-top:1.75rem">Working Papers</h4>
-                    
+                    <h4 style="margin-bottom: -0.0rem; margin-top:1.75rem">Working Papers</h4>
+
                     <div class="paperblock">
-                        Another Paper Title<br>
+                        Working Paper Title<br>
                         <label class="collapsible">
                             <input type="checkbox">
                             <span class="collapser">
@@ -102,56 +102,27 @@
                             </div>
                         </label>
                     </div>
+
                     <h4 style="margin-bottom: -0.0rem; margin-top:1.75rem">Presentations</h4>
 
-                        <h5 style="margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600;">Refereed Talks</h5>
+                    <p style="margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600;">Refereed Talks</p>
 
-                        <div class="presentation">
-                            <span class="pres-date">January 2025</span><br>
-                            "Code Switching and Layered Indexicality: A Study of a Cantonese-English Bilingual Community"<br>
-                            <span class="venue">95th Annual Meeting of the Linguistic Society of America, Philadelphia, PA</span>
-                        </div>
+                    <div class="paperblock">
+                        "Presentation Title"<br>
+                        <span class="journal">Conference Name, Location, Date</span>
+                    </div>
 
-                        <div class="presentation">
-                            <span class="pres-date">January 2025</span><br>
-                            Adolfo Hermosillo, Jonathan WuWong, Yin Lin Tan, Irene Yi. "Intensifier Variation and Change in Salinas, California"<br>
-                            <span class="venue">95th Annual Meeting of the Linguistic Society of America, Philadelphia, PA</span>
-                        </div>
+                    <p style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">Poster Presentations</p>
 
-                        <div class="presentation">
-                            <span class="pres-date">November 2024</span><br>
-                            Adolfo Hermosillo, Jonathan WuWong, Yin Lin Tan, Irene Yi. "A Very Subjective but Really Cool Phenomenon: Intensifier Variation and Change in Salinas, California"<br>
-                            <span class="venue">52nd New Ways of Analyzing Variation (NWAV), Miami, FL</span>
-                        </div>
+                    <div class="paperblock">
+                        "Poster Title"<br>
+                        <span class="journal">Conference Name, Location, Date</span>
+                    </div>
 
-                        <div class="presentation">
-                            <span class="pres-date">May 2022</span><br>
-                            "Interpreters, Electoral Politics, and Language Use within Boston's Multilingual Chinatown"<br>
-                            <span class="venue">2022 Michicagoan, 23rd Annual Graduate Student Conference in Linguistic Anthropology, University of Michigan</span>
-                        </div>
-
-                        <div class="presentation">
-                            <span class="pres-date">December 2021</span><br>
-                            Lenore Grenoble & Jonathan WuWong. "Accounting for Grammatical Change and Variation Within Endangered Language Grammars: The Case of Even"<br>
-                            <span class="venue">Descriptive Grammars and Typology II, Paris, France</span>
-                        </div>
-
-                        <div class="presentation">
-                            <span class="pres-date">June 2021</span><br>
-                            Lenore Grenoble, Daria Boltokova, Emre Hakguder & Jonathan WuWong. "Understanding language shift as contact in process"<br>
-                            <span class="venue">International Congress of Arctic Social Sciences, Arkhangelsk</span>
-                        </div>
-
-                        <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">Poster Presentations</h5>
-
-                        <div class="presentation">
-                            <span class="pres-date">November 2024</span><br>
-                            "Migratory Variables: R-lessness Among Cantonese Immigrants in Boston, MA"<br>
-                            <span class="venue">52nd New Ways of Analyzing Variation (NWAV), Miami, FL</span>
-                        </div>
                 </div>
             </div>
         </article>
+        <br><br>
     </main>
 
     <!-- Scripts -->
@@ -163,18 +134,23 @@
             btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         }
 
-        // Dark mode toggle
+        // Apply saved theme before page renders
         (function() {
             try {
                 var storedTheme = localStorage.getItem('theme');
                 if (storedTheme === 'dark') {
                     document.documentElement.classList.add('dark-mode');
+                } else if (storedTheme === 'light') {
+                    document.documentElement.classList.remove('dark-mode');
                 }
             } catch(e) {}
         })();
 
+        // Handle dark-mode toggles
         document.addEventListener('DOMContentLoaded', function() {
             var toggles = document.querySelectorAll('.theme-toggle');
+            if (!toggles.length) return;
+
             toggles.forEach(function(btn) {
                 btn.addEventListener('click', function() {
                     var isDark = document.documentElement.classList.toggle('dark-mode');

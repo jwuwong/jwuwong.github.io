@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Presentations - Your Name</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Merriweather+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Desktop Navigation -->
+    <div class="desktoponly">
+        <aside>
+            <div class="header_container">
+                <nav>
+                    <ul>
+                        <li><a href="/">Your Name</a></li>
+                        <li><a href="/pdfs/cv.pdf">CV</a></li>
+                        <li><a href="/presentations/">Presentations</a></li>
+                        <li><a href="/teaching/">Teaching</a></li>
+                    </ul>
+                </nav>
+                <button id="theme-toggle-desktop" class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="icon-moon">🌙</span>
+                    <span class="icon-sun">☀️</span>
+                </button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobileonly">
+        <div class="topnav-container">
+            <nav class="topnav" id="topnav">
+                <button id="theme-toggle-mobile" class="mobile-toggle theme-toggle" aria-label="Toggle dark mode">
+                    <span class="icon-moon">🌙</span>
+                    <span class="icon-sun">☀️</span>
+                </button>
+                <button class="icon" aria-expanded="false" onclick="toggleMenu(this)">
+                    ☰<span class="sr-only"> Menu</span>
+                </button>
+            </nav>
+            <div id="myLinks" class="topnav-links">
+                <a href="/">Home</a>
+                <a href="/pdfs/cv.pdf">CV</a>
+                <a href="/presentations/">Presentations</a>
+                <a href="/teaching/">Teaching</a>
+            </div>
+            <div class="grey-bar"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <article>
+            <div style="margin-top: 80px;">
+                
+                <h4 style="margin-bottom: -0.0rem;">Presentations</h4>
+
+                <p style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">Refereed Talks</p>
+
+                <div class="paperblock">
+                    Jonathan WuWong. "Code Switching and Layered Indexicality: A Study of a Cantonese-English Bilingual Community" <br>
+                    <span class="journal">95th Annual Meeting of the Linguistic Society of America, Philadelphia, PA, January 2025</span>
+                </div>
+
+                <div class="paperblock">
+                    Adolfo Hermosillo, Jonathan WuWong, Yin Lin Tan, Irene Yi. "Intensifier Variation and Change in Salinas, California" <br>
+                    <span class="journal">95th Annual Meeting of the Linguistic Society of America, Philadelphia, PA, January 2025</span>
+                </div>
+
+                <div class="paperblock">
+                    Adolfo Hermosillo, Jonathan WuWong, Yin Lin Tan, Irene Yi. "A Very Subjective but Really Cool Phenomenon: Intensifier Variation and Change in Salinas, California" <br>
+                    <span class="journal">52nd New Ways of Analyzing Variation (NWAV), Miami, FL, November 2024</span>
+                </div>
+
+                <div class="paperblock">
+                    Jonathan WuWong. "Interpreters, Electoral Politics, and Language Use within Boston's Multilingual Chinatown" <br>
+                    <span class="journal">2022 Michicagoan, 23rd Annual Graduate Student Conference in Linguistic Anthropology, University of Michigan, May 2022</span>
+                </div>
+
+                <div class="paperblock">
+                    Lenore Grenoble & Jonathan WuWong. "Accounting for Grammatical Change and Variation Within Endangered Language Grammars: The Case of Even" <br>
+                    <span class="journal">Descriptive Grammars and Typology II, Paris, France, December 2021</span>
+                </div>
+
+                <div class="paperblock">
+                    Lenore Grenoble, Daria Boltokova, Emre Hakguder & Jonathan WuWong. "Understanding language shift as contact in process" <br>
+                    <span class="journal">International Congress of Arctic Social Sciences, Arkhangelsk, June 2021</span>
+                </div>
+
+                <p style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">Poster Presentations</p>
+
+                <div class="paperblock">
+                    Jonathan WuWong. "Migratory Variables: R-lessness Among Cantonese Immigrants in Boston, MA" <br>
+                    <span class="journal">52nd New Ways of Analyzing Variation (NWAV), Miami, FL, November 2024</span>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        function toggleMenu(btn) {
+            var nav = document.getElementById('topnav');
+            var isOpen = nav.classList.toggle('open');
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+
+        (function() {
+            try {
+                var storedTheme = localStorage.getItem('theme');
+                if (storedTheme === 'dark') {
+                    document.documentElement.classList.add('dark-mode');
+                }
+            } catch(e) {}
+        })();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggles = document.querySelectorAll('.theme-toggle');
+            toggles.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var isDark = document.documentElement.classList.toggle('dark-mode');
+                    try {
+                        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                    } catch(e) {}
+                });
+            });
+        });
+    </script>
+</body>
+</html>
