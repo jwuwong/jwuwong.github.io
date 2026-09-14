@@ -137,6 +137,11 @@ html.dark-mode .theme-toggle {
   color: #ddd;
 }
 
+/* dark mode: invert the black toggle icons so they show on dark bg */
+html.dark-mode .theme-toggle img {
+  filter: invert(1) brightness(1.8);
+}
+
 /* Default: light mode → show moon (click to go dark), hide sun */
 .theme-toggle .icon-sun {
   display: none;
