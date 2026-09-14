@@ -1,17 +1,17 @@
 $content-width: 1050px;
-$main:  #8A8F4E;
-$font-style: 'Mulish', sans-serif;
+$main: #1f5798;
+$font-style: 'Nunito Sans', sans-serif;
 $font-color: #303030;
-$link-color:  #8A8F4E;
-$link-hover-color: #99907D;
-$link-visited-color: #99907D;
-$heading-font: 'Merriweather', sans-serif;
-$heading-font-color:  #8A8F4E;
+$link-color: #1f5798;
+$link-hover-color: #A97758;
+$link-visited-color: #8C6248;
+$heading-font: 'DM Sans', sans-serif;
+$heading-font-color: #1f5798;
 $light: #F0F0F0;
-$header: #F5F6EE;
+$header: #EEF1F4;
 $background-color: #FFFFFF;
 
-$blockquote-color: #F5F6EE;
+$blockquote-color: #EEF1F4;
 
 *,
 *::before,
@@ -20,3 +20,4 @@ $blockquote-color: #F5F6EE;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+

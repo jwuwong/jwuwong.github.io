@@ -205,19 +205,19 @@ html.dark-mode .topnav-links {
 
 /* hamburger color */
 html.dark-mode .icon {
-  color: #D98A58
+  color: #7FA8D9
 }
 html.dark-mode .icon:hover,
 .icon:active {
-  color: #7fd48f;
+  color: #C89B79;
 }
 
 /* Links */
 html.dark-mode a {
-  color: #D98A58;     /* soft blue #9ecbff */
+  color: #7FA8D9;     /* light navy for dark bg */
 }
 html.dark-mode a:hover {
-  color: #7fd48f;
+  color: #C89B79;     /* light terracotta */
 }
 
 /* Header / nav */
@@ -230,8 +230,8 @@ html.dark-mode nav a {
 
 html.dark-mode aside nav a:hover,
 html.dark-mode aside nav a:active {
-  background: #D98A58;      // or whatever dark hover bg you like
-  color: #222;        // your dark-mode link color
+  background: #7FA8D9;      // dark hover bg
+  color: #222;             // dark-mode link color
 }
 
 /* Code blocks */
@@ -255,7 +255,7 @@ body {
 html.dark-mode h1,
 html.dark-mode h2,
 html.dark-mode h3 {
-  color: #D98A58;   /* or whatever dark-mode text color you want */
+  color: #7FA8D9;   /* light navy heading in dark mode */
 }
 
 /* journal , press classes */
@@ -449,6 +449,27 @@ blockquote {
       font-size .25s,
       opacity .5s .25s;
   }
+
+
+/* misc art gallery */
+.art-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0 20px;
+}
+.art-grid img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;      /* uniform tiles, cropped to fill */
+  border-radius: 4px;
+}
+@media (max-width: 768px) {
+  .art-grid img {
+    width: 100%;
+    height: auto;
+  }
+}
 
 
 /* Aside */
@@ -658,22 +679,16 @@ footer {
   }
 
 
-  /* misc art gallery */
-.art-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 10px 0 20px;
+
+  /* homepage keywords */
+.keywords {
+  color: $link-hover-color;   /* terracotta accent */
+  font-size: 0.9em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  line-height: 1.6;
 }
-.art-grid img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;      /* uniform tiles, cropped to fill */
-  border-radius: 4px;
-}
-@media (max-width: 768px) {
-  .art-grid img {
-    width: 100%;
-    height: auto;
-  }
+html.dark-mode .keywords {
+  color: #C89B79;   /* light terracotta in dark mode */
 }
