@@ -1,0 +1,14 @@
+# Site Settings
+title: Jonathan WuWong
+email: jwuwong@stanford.edu
+description: Jonathan WuWong (黃樹賢) — PhD student in Linguistics at Stanford University. Sociolinguistics, language variation & change, multilingualism, and the Chinese diaspora.
+baseurl: ""
+url: "https://jwuwong.github.io"
+twitter_username: 
+github_username: 
+# Build Settings
+sass:
+  sass_dir: _sass
+include: ['_pages']
+kramdown:
+  input: GFM

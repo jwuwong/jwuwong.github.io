@@ -1,0 +1,22 @@
+$content-width: 1050px;
+$main:  #8A8F4E;
+$font-style: 'Mulish', sans-serif;
+$font-color: #303030;
+$link-color:  #8A8F4E;
+$link-hover-color: #99907D;
+$link-visited-color: #99907D;
+$heading-font: 'Merriweather', sans-serif;
+$heading-font-color:  #8A8F4E;
+$light: #F0F0F0;
+$header: #F5F6EE;
+$background-color: #FFFFFF;
+
+$blockquote-color: #F5F6EE;
+
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}

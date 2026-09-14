@@ -1,0 +1,679 @@
+body {
+	margin: 0;
+	color: $font-color;
+	font-family: $font-style;
+	font-size: 0.85em;
+	line-height: 1.5;
+	-webkit-font-smoothing: auto;
+	background-color: $background-color
+}
+h1,
+h2,
+h3 {
+	font-weight: 600;
+	color: $heading-font-color;
+	font-family: $heading-font;
+	line-height: 2;
+}
+h3.tight {
+  margin: 0;          /* remove vertical whitespace */
+  line-height: 1.2;   /* optional: tweak text spacing */
+  font-size: 1.17em;  /* keep same size as h3 */
+  font-weight: bold;
+}
+h1 {
+	color: $main;
+	font-size: 2em;
+	a,
+	a:visited {
+		text-decoration: none;
+		color: $main;
+	}
+}
+h2 {
+	font-size: 1.5em;
+	margin: 10;
+}
+h4 {
+	text-decoration: none;
+}
+a,
+a:visited {
+	color: $link-color;
+	text-decoration: underline;
+	/*font-weight: bold;*/
+}
+a:hover {
+	color: $link-hover-color;
+	text-decoration: underline;
+}
+
+
+.muted {
+  color: lighten($font-color, 40%); /* softer grey than body text */
+  font-size: 0.9em;                 /* slightly smaller */
+}
+header {
+	background: $header;
+	padding: 15px 10px;
+	text-align: center;
+	margin: 0 0 0;
+	height: 0vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+main {
+	padding: 0 15px;
+	max-width: $content-width;
+	margin: 0 auto;
+}
+time {
+	color: #898989;
+	margin: 0;
+}
+.container {
+	max-width: $content-width;
+	margin: 0 auto;
+}
+
+/* Jordan Mods */
+
+/* darkmode stuff */ 
+
+aside .header_container {
+  display: flex;
+  align-items: center; 
+  text-align: left;
+}
+
+aside nav {
+  padding-left: 1.25rem;
+  flex: 1; /* take remaining width */
+}
+
+/* Make sure nav items stay left-aligned and in a horizontal row */
+aside nav ul {
+  display: flex;
+  justify-content: flex-start;  /* explicit left alignment */
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Dark mode toggle button (simple icon) */
+/* AFTER: apply to ALL dark-mode buttons (desktop + mobile) */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #666;
+}
+
+.theme-toggle img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+
+/* moon art is centered with big empty margins → scale it up to match sun */
+.theme-toggle .icon-moon {
+  transform: scale(1.6);
+}
+
+#theme-toggle-desktop {
+  padding-right: 2rem;   /* add right-side space */
+  padding-left: 2rem;      /* optional left padding */
+}
+
+html.dark-mode .theme-toggle {
+  color: #ddd;
+}
+
+/* Default: light mode → show moon (click to go dark), hide sun */
+.theme-toggle .icon-sun {
+  display: none;
+}
+.theme-toggle .icon-moon {
+  display: inline;
+}
+
+/* Dark mode: show sun (click to go back), hide moon */
+html.dark-mode .theme-toggle .icon-sun {
+  display: inline;
+}
+html.dark-mode .theme-toggle .icon-moon {
+  display: none;
+}
+
+/* color polish */
+html.dark-mode #theme-toggle { color: #ddd; }
+
+/*
+x logo lightmode / darkmode switch
+*/
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.social-icon {
+  opacity: 0.75;
+  transition: opacity 0.15s ease;
+}
+
+.social-link:hover .social-icon { opacity: 1; }
+
+/* default: light mode */
+.x-dark { display: none; }
+.x-light { display: inline; }
+
+/* dark mode */
+html.dark-mode .x-dark { display: inline; }
+html.dark-mode .x-light { display: none; }
+
+
+/*
+*
+* dark mode styling
+*
+*/
+/* Background + text */
+html.dark-mode body {
+  background-color: #111;
+  color: #e5e5e5;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark-mode .topnav {
+  background-color: #111
+}
+
+/* Dark mode for the dropdown menu */
+html.dark-mode .topnav-links {
+  background-color: #1a1a1a;
+  border-color: #333;
+}
+
+/* hamburger color */
+html.dark-mode .icon {
+  color: #D98A58
+}
+html.dark-mode .icon:hover,
+.icon:active {
+  color: #7fd48f;
+}
+
+/* Links */
+html.dark-mode a {
+  color: #D98A58;     /* soft blue #9ecbff */
+}
+html.dark-mode a:hover {
+  color: #7fd48f;
+}
+
+/* Header / nav */
+html.dark-mode aside {
+  background-color: #1a1a1a;
+}
+html.dark-mode nav a {
+  color: #e5e5e5;
+}
+
+html.dark-mode aside nav a:hover,
+html.dark-mode aside nav a:active {
+  background: #D98A58;      // or whatever dark hover bg you like
+  color: #222;        // your dark-mode link color
+}
+
+/* Code blocks */
+html.dark-mode pre,
+html.dark-mode code {
+  background: #222;
+  color: #f2f2f2;
+}
+
+/* Horizontal rules */
+html.dark-mode hr {
+  border-color: #333;
+}
+
+/* Optional: smooth transition for everything */
+html.dark-mode *,
+body {
+  transition: background-color 0.3s ease, color 0.01s ease;
+}
+
+html.dark-mode h1,
+html.dark-mode h2,
+html.dark-mode h3 {
+  color: #D98A58;   /* or whatever dark-mode text color you want */
+}
+
+/* journal , press classes */
+.journal {
+  font-size: 0.9em;                        /* scale relative to body font size */
+  font-style: italic;                      /* italics */
+  color: lighten($font-color, 30%);        /* greyed compared to main text */
+}
+
+html.dark-mode .journal {
+  color: lighten($font-color, 50%)
+}
+
+.press {
+  font-size: 0.85em;                        /* scale relative to body font size */
+  color: lighten($font-color, 30%);        /* greyed compared to main text */
+}
+.press a {
+  color: inherit;              /* <- forces same color as .press */
+  text-decoration: none;
+}
+.press a:hover {
+  color: $link-hover-color;
+  text-decoration: none;
+}
+
+html.dark-mode .press {
+  color: lighten($font-color, 50%); /* or 25–30% depending on taste */
+}
+html.dark-mode .press a {
+  color: inherit;
+  text-decoration: none;
+}
+html.dark-mode .press a:hover {
+  color: $link-hover-color;
+  text-decoration: none;
+}
+
+.coauthors {
+  font-size: 0.9em;
+  color: lighten($font-color, 30%);
+}
+.coauthors a {
+  color: inherit;
+  text-decoration: none;
+}
+.coauthors a:hover {
+  color: $link-hover-color;
+  text-decoration: none;
+}
+
+html.dark-mode .coauthors {
+  color: lighten($font-color, 50%);
+}
+html.dark-mode .coauthors a {
+  color: inherit;
+  text-decoration: none;
+}
+html.dark-mode .coauthors a:hover {
+  color: $link-hover-color;
+  text-decoration: none;
+}
+
+blockquote {
+  background: $blockquote-color;
+  margin-left: 1.0em 10px;
+  padding: 0.2em 10px;
+}
+
+.boxed {
+  border: 2px solid #F0F0F0 ;
+  padding: 5px 5px;
+}
+.left {
+ float: left;
+ padding: 0 20px 20px 0;
+}
+
+.paperblock {
+  padding: 5px 2.5px;      /* keep same inner spacing as .boxed */
+  margin-bottom: 1em;    /* add breathing room between papers */
+  border: none;          /* explicitly remove border */
+}
+
+/* profile page */ 
+
+.profile {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.profile-left {
+  flex: 0 0 235px;
+}
+.profile-right {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.profile-intro {
+  font-size: 0.85em;
+}
+
+/* make left side narrower by default */
+.profile-left img {
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+}
+
+/* responsive: shrink / stack on small screens */
+@media (max-width: 768px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-left img {
+    max-width: 150px; /* smaller image on mobile */
+  }
+
+  .profile-left, .profile-right {
+    width: 100%;
+  }
+}
+
+
+
+/* research page collapsibles*/
+
+.collapsible {
+  display: block;
+
+  input {
+    position: absolute;
+    left: -9999px;
+    &:focus ~ .collapser{
+      border-color: #F0F0F0;
+    }
+  }
+
+  .collapser {
+    cursor: pointer;
+    border: 1px transparent dotted;
+  }
+
+  .arrow {
+    float: right;
+    display: inline-block;
+    transform: rotate(90deg);
+  }
+
+  .collapsed {
+  font-size: 0;
+  margin: 0 0 0 0.5em;
+  opacity: 0;
+  padding: 0 0 0 1rem;                  /* <-- space between line and text */
+  border-left: 1px solid lighten($font-color, 50%);
+  }
+}
+  input:checked ~ .arrow{
+    transform: rotate(270deg);
+  }
+
+  input:checked ~ .collapsed {
+    font-size: 14px;
+  	opacity: 0.9;
+  	height: auto;
+  	padding: 0 0 0 1rem;
+  }
+  .arrow {
+    transition: transform .25s ease-out;
+  }
+
+  .collapsed {
+    /* fade out, then shrink */
+    transition:   
+      opacity .25s,
+      margin .5s 0.25s,
+      font-size .5s 0.25s,
+      padding .5s .25s;
+  }
+
+  input:checked ~ .collapsed {    
+    /* grow, then fade in */
+    transition:   
+      margin .25s,
+      padding .25s,
+      font-size .25s,
+      opacity .5s .25s;
+  }
+
+
+/* Aside */
+
+aside {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: $background-color;
+	width: 100%;
+	z-index: 2;
+	border-bottom: 1px solid lighten($light, 30%);
+	box-shadow: 0px 1px 1px RGBA(4, 25, 54, .1);
+	nav {
+		float: left;
+		max-width: 800px;
+		margin: 0 auto;
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			li {
+				float: left;
+				position: relative;
+				a {
+					text-decoration: none;
+					display: block;
+					padding: 15px;
+					font-family: 'Muli', sans-serif;
+					line-height: 20px;
+					margin-bottom: -1px;
+					box-shadow: 0;
+					&:hover,
+					&:active {
+						background: $header;
+						text-decoration: none;
+						color: $main;
+					}
+				}
+			}
+		}
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+	}
+}
+footer {
+	position: relative;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	padding: 200px;
+}
+
+/*****/
+/* mobile only */
+/*****/
+
+.mobiledisp {
+  display: none;       /* hidden by default */
+  margin: 0;           /* no extra margin/padding */
+  padding: 0;
+  text-align: left;    /* align with normal body text */
+  font-size: 1rem;     /* adjust to taste */
+  font-family: inherit;
+}
+
+@media screen and (max-width: 900px) {
+  .mobiledisp {
+    display: block;    /* show only on mobile */
+  }
+}
+
+
+/*****/
+/* hamburger menu */
+/*****/
+
+.topnav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.topnav {
+  background-color: $background-color;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 16px;
+}
+
+.xxxxx-links {
+  display: none;
+  position: absolute;
+  top: 60px; /* below the bar */
+  left: auto;
+  right: 0px;
+  background-color: $background-color;
+  text-align: right;
+
+  /* add outline/visual separation */
+  border: 1px solid $light;      /* light grey border */
+  border-radius: 4px;          /* optional rounded corners */
+}
+
+.topnav-links {
+  position: absolute;
+  top: 60px;
+  right: 16px;
+  min-width: 180px;
+  background-color: $background-color;
+  border: 1px solid $light;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  z-index: 1001;
+
+  opacity: 0;
+  transform: translateY(-6px) scaleY(0.98);
+  transform-origin: top right;
+
+  /* keep it in flow so it can animate out */
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease,
+    visibility 0s linear .25s;   /* hide only after .25s */
+}
+
+.topnav.open + .topnav-links {
+  opacity: 1;
+  transform: translateY(0) scaleY(1);
+  visibility: visible;
+  pointer-events: auto;
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease,
+    visibility 0s;               /* show immediately */
+}
+
+
+
+.topnav a,
+.topnav-links a {
+  color: $link-color;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  line-height: 60px;
+  padding: 0 16px;
+}
+
+.topnav a:hover,
+.topnav-links a:hover {
+  color: $link-hover-color;
+}
+
+.icon {
+  background: transparent;
+  border: 0;
+  padding: 0 8px;
+  font-size: 40px;
+  line-height: 55px;
+  cursor: pointer;
+  color: $link-color;
+}
+
+.icon:focus {
+  outline: 2px solid $link-color;
+  outline-offset: 2px;
+}
+
+/* screen-reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+/* desktop hover, mobile tap */
+.icon:hover,
+.icon:active {
+  color: $link-hover-color;
+}
+
+/* Style for the thin grey bar */
+.grey-bar {
+	height: 1px;
+	background-color: $light;
+	width: 100vw; /* Make the bar span the entire width */
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+  }
+
+
+  /* misc art gallery */
+.art-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0 20px;
+}
+.art-grid img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;      /* uniform tiles, cropped to fill */
+  border-radius: 4px;
+}
+@media (max-width: 768px) {
+  .art-grid img {
+    width: 100%;
+    height: auto;
+  }
+}

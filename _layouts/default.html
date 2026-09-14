@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body>
+	<div class="desktoponly">
+	{% unless page.exclude %}{% include header.html %}{% endunless %}
+	</div>
+	<div class="mobileonly">
+	{% unless page.exclude %}{% include header_mobile.html %}{% endunless %}
+	</div>
+	<main>
+		<article>
+			{{ content }}
+		</article>
+		{% include footer.html %}
+	</main>
+</body>
+
+</html>

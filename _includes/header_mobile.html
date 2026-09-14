@@ -1,0 +1,42 @@
+<div class="topnav-container">
+  <nav class="topnav" id="topnav">
+    
+
+<!-- Dark mode toggle button -->
+    <button
+  id="theme-toggle-mobile"
+  class="mobile-toggle theme-toggle"
+  aria-label="Toggle dark mode">
+  <img src="{{ site.baseurl }}/images/moon-icon.svg" class="icon-moon" alt="Dark mode icon">
+  <img src="{{ site.baseurl }}/images/sun-icon.svg" class="icon-sun" alt="Light mode icon">
+</button>
+
+
+    <!-- hamburger -->
+    <button class="icon" aria-expanded="false" aria-controls="myLinks" onclick="toggleMenu(this)">
+      &#9776;<span class="sr-only"> Menu</span>
+    </button>
+  </nav>
+
+  <!-- links -->
+  <div id="myLinks" class="topnav-links">
+  	<a href="{{ site.url }}">Home</a>
+    <a href="{{ site.url }}/about/">About</a>
+    <a href="{{ site.url }}/presentations/">Presentations</a>
+    <a href="{{ site.url }}/teaching/">Teaching</a>
+    <a href="{{ site.url }}/outreach/">Outreach</a>
+    <a href="{{ site.url }}/misc/">Misc</a>
+    <a href="{{ site.url }}/pdfs/cv_wuwong.pdf">CV</a>
+  </div>
+
+  <div class="grey-bar"></div>
+</div>
+<br><br> 
+
+<script>
+  function toggleMenu(btn) {
+    var nav = document.getElementById('topnav');
+    var isOpen = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+</script>
