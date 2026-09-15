@@ -94,14 +94,16 @@ html.dark-mode .left-rail { background-color: #111; }
 
 .rail-inner { display: flex; flex-direction: column; }
 
+/* Photo — fits the rail width */
 .rail-photo {
-  width: 150px;
-  max-width: 100%;
-  height: 150px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;      /* square crop */
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  margin-bottom: 14px;
+  margin-bottom: 12px;
+  display: block;
 }
 
 .rail-name {
@@ -119,12 +121,20 @@ html.dark-mode .rail-name a { color: #7FA8D9; }
   font-size: 0.8em;
   font-weight: 600;
   line-height: 1.5;
-  margin-bottom: 20px;
 }
 html.dark-mode .rail-keywords { color: #C89B79; }
 
+/* Divider lines */
+.rail-divider {
+  border: none;
+  border-top: 1px solid #E0E0E0;
+  margin: 18px 0;
+  width: 100%;
+}
+html.dark-mode .rail-divider { border-top-color: #333; }
+
 /* Vertical nav */
-.rail-nav ul { list-style: none; margin: 0 0 20px 0; padding: 0; display: block; }
+.rail-nav ul { list-style: none; margin: 0; padding: 0; display: block; }
 .rail-nav li { display: block; float: none; margin-bottom: 8px; }
 .rail-nav a, .rail-nav a:visited {
   display: block;
