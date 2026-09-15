@@ -20,15 +20,14 @@
 
   <!-- links -->
   <div id="myLinks" class="topnav-links">
-  	<a href="{{ site.url }}">Home</a>
-    <a href="{{ site.url }}/about/">About</a>
-    <a href="{{ site.url }}/projects/">Projects</a>
-    <a href="{{ site.url }}/teaching/">Teaching</a>
-    <a href="{{ site.url }}/outreach/">Outreach</a>
-    <a href="{{ site.url }}/misc/">Misc</a>
+  	<a href="{{ site.url }}" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
+    <a href="{{ site.url }}/about/" {% if page.url contains "/about" %}class="active"{% endif %}>About</a>
+    <a href="{{ site.url }}/projects/" {% if page.url contains "/projects" %}class="active"{% endif %}>Projects</a>
+    <a href="{{ site.url }}/teaching/" {% if page.url contains "/teaching" %}class="active"{% endif %}>Teaching</a>
+    <a href="{{ site.url }}/outreach/" {% if page.url contains "/outreach" %}class="active"{% endif %}>Outreach</a>
+    <a href="{{ site.url }}/misc/" {% if page.url contains "/misc" %}class="active"{% endif %}>Misc</a>
     <a href="{{ site.url }}/pdfs/cv_wuwong.pdf">CV</a>
   </div>
-
 
   <div class="grey-bar"></div>
 </div>

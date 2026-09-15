@@ -3,12 +3,12 @@
 
     <nav>
       <ul>
-        <li><a href="{{ site.url }}">{{ site.title }}</a></li>
-        <li><a href="{{ site.url }}/about/">About</a></li>
-        <li><a href="{{ site.url }}/projects/">Projects</a></li>
-        <li><a href="{{ site.url }}/teaching/">Teaching</a></li>
-        <li><a href="{{ site.url }}/outreach/">Outreach</a></li>
-        <li><a href="{{ site.url }}/misc/">Misc</a></li>
+        <li><a href="{{ site.url }}" {% if page.url == "/" %}class="active"{% endif %}>{{ site.title }}</a></li>
+        <li><a href="{{ site.url }}/about/" {% if page.url contains "/about" %}class="active"{% endif %}>About</a></li>
+        <li><a href="{{ site.url }}/projects/" {% if page.url contains "/projects" %}class="active"{% endif %}>Projects</a></li>
+        <li><a href="{{ site.url }}/teaching/" {% if page.url contains "/teaching" %}class="active"{% endif %}>Teaching</a></li>
+        <li><a href="{{ site.url }}/outreach/" {% if page.url contains "/outreach" %}class="active"{% endif %}>Outreach</a></li>
+        <li><a href="{{ site.url }}/misc/" {% if page.url contains "/misc" %}class="active"{% endif %}>Misc</a></li>
         <li><a href="{{ site.url }}/pdfs/cv_wuwong.pdf">CV</a></li>
       </ul>
     </nav>
