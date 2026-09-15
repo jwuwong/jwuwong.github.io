@@ -53,7 +53,7 @@ time { color: #898989; margin: 0; }
   justify-content: space-between;
   padding: 0 24px;
   background: $background-color;
-  border-bottom: 1px solid lighten($light, 20%);
+  border-bottom: 1px solid #c3c3c3;
 }
 .topbar-name {
   font-family: $heading-font;
@@ -67,7 +67,7 @@ html.dark-mode .topbar { background: #111; border-bottom-color: #333; }
 html.dark-mode .topbar-name { color: #7FA8D9; }
 
 /* ============================================
-   L-SHAPED LAYOUT: left nav rail + main content
+   L-SHAPED LAYOUT: left rail + main content
    ============================================ */
 
 .site-wrap {
@@ -75,23 +75,56 @@ html.dark-mode .topbar-name { color: #7FA8D9; }
   align-items: flex-start;
   max-width: $content-width;
   margin: 0 auto;
-  padding-top: 54px;   /* clear the fixed desktop top bar */
+  padding-top: 54px;   /* clear the fixed top bar */
 }
 
+/* Left rail — identity + nav + contact, consistent width */
 .left-rail {
   position: sticky;
   top: 54px;
-  flex: 0 0 200px;
-  width: 200px;
+  flex: 0 0 240px;
+  width: 240px;
   height: calc(100vh - 54px);
   overflow-y: auto;
-  padding: 30px 20px;
+  padding: 28px 22px;
   box-sizing: border-box;
   background: $background-color;
 }
 html.dark-mode .left-rail { background-color: #111; }
 
-.rail-nav ul { list-style: none; margin: 0; padding: 0; display: block; }
+.rail-inner { display: flex; flex-direction: column; }
+
+.rail-photo {
+  width: 150px;
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 14px;
+}
+
+.rail-name {
+  font-family: $heading-font;
+  font-size: 1.2em;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.rail-name a, .rail-name a:visited { color: $main; text-decoration: none; }
+html.dark-mode .rail-name a { color: #7FA8D9; }
+
+.rail-keywords {
+  color: $link-hover-color;
+  font-size: 0.8em;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+html.dark-mode .rail-keywords { color: #C89B79; }
+
+/* Vertical nav */
+.rail-nav ul { list-style: none; margin: 0 0 20px 0; padding: 0; display: block; }
 .rail-nav li { display: block; float: none; margin-bottom: 8px; }
 .rail-nav a, .rail-nav a:visited {
   display: block;
@@ -113,6 +146,13 @@ html.dark-mode .rail-nav a:visited { color: #7FA8D9; }
 html.dark-mode .rail-nav a:hover { color: #C89B79; }
 html.dark-mode .rail-nav a.active { color: #7FA8D9; border-left-color: #7FA8D9; }
 
+/* Contact links */
+.rail-contact {
+  font-size: 0.8em;
+  line-height: 1.7;
+}
+
+/* Main content */
 .site-wrap main {
   flex: 1 1 auto;
   min-width: 0;
@@ -121,52 +161,7 @@ html.dark-mode .rail-nav a.active { color: #7FA8D9; border-left-color: #7FA8D9; 
   margin: 0;
 }
 
-/* ============================================
-   HOME BIO BOX (light navy tint, home only)
-   ============================================ */
-
-.bio-box {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background: #EDF1F6;
-  border: 1px solid #D6E0EC;
-  border-radius: 8px;
-  padding: 18px 20px;
-  margin-bottom: 24px;
-}
-.bio-photo {
-  flex: 0 0 auto;
-  width: 90px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-.bio-text { flex: 1 1 auto; min-width: 0; }
-.bio-name {
-  font-family: $heading-font;
-  font-size: 1.25em;
-  font-weight: 700;
-  color: $main;
-}
-.bio-role {
-  font-size: 0.9em;
-  color: lighten($font-color, 20%);
-  margin: 2px 0 6px;
-}
-.bio-keywords {
-  color: $link-hover-color;
-  font-size: 0.85em;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-.bio-contact { font-size: 0.85em; }
-
-html.dark-mode .bio-box { background: #14202e; border-color: #24384f; }
-html.dark-mode .bio-name { color: #7FA8D9; }
-html.dark-mode .bio-keywords { color: #C89B79; }
-html.dark-mode .bio-role { color: #cfcfcf; }
-
+/* home bio labels */
 .home-bio strong { color: $link-hover-color; }
 html.dark-mode .home-bio strong { color: #C89B79; }
 
@@ -425,9 +420,8 @@ html.dark-mode .topnav-links a.active { color: #7FA8D9; }
 
   .site-wrap {
     flex-direction: column;
-    padding-top: 56px;   /* exactly the height of the fixed mobile bar */
+    padding-top: 56px;
   }
   .left-rail { display: none; }
   .site-wrap main { padding: 15px; width: 100%; }
-  .bio-box { flex-direction: column; text-align: center; }
 }
