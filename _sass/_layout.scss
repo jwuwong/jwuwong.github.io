@@ -40,7 +40,7 @@ time { color: #898989; margin: 0; }
 .container { max-width: $content-width; margin: 0 auto; }
 
 /* ============================================
-   TOP BAR (name left, toggle right)
+   TOP BAR (desktop: name left, toggle right)
    ============================================ */
 
 .topbar {
@@ -75,7 +75,7 @@ html.dark-mode .topbar-name { color: #7FA8D9; }
   align-items: flex-start;
   max-width: $content-width;
   margin: 0 auto;
-  padding-top: 54px;
+  padding-top: 54px;   /* clear the fixed desktop top bar */
 }
 
 .left-rail {
@@ -335,7 +335,7 @@ aside:not(.left-rail) {
    FOOTER
    ============================================ */
 
-footer { position: relative; bottom: 0; left: 0; text-align: center; padding: 200px; }
+footer { position: relative; bottom: 0; left: 0; text-align: center; padding: 40px 0; }
 
 /* ============================================
    MOBILE HAMBURGER MENU
@@ -345,7 +345,6 @@ footer { position: relative; bottom: 0; left: 0; text-align: center; padding: 20
   display: none; margin: 0; padding: 0;
   text-align: left; font-size: 1rem; font-family: inherit;
 }
-@media screen and (max-width: 900px) { .mobiledisp { display: block; } }
 
 .topnav-container { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
 
@@ -355,13 +354,13 @@ footer { position: relative; bottom: 0; left: 0; text-align: center; padding: 20
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: 56px;
   padding: 0 16px;
 }
 
 .topnav-links {
   position: absolute;
-  top: 60px; left: 16px;
+  top: 56px; left: 16px;
   min-width: 180px;
   background-color: $background-color;
   border: 1px solid $light;
@@ -386,9 +385,9 @@ footer { position: relative; bottom: 0; left: 0; text-align: center; padding: 20
 .topnav a, .topnav-links a {
   color: $link-color;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 22px;
   display: block;
-  line-height: 60px;
+  line-height: 48px;
   padding: 0 16px;
 }
 .topnav a:hover, .topnav-links a:hover { color: $link-hover-color; }
@@ -397,7 +396,7 @@ html.dark-mode .topnav-links a.active { color: #7FA8D9; }
 
 .icon {
   background: transparent; border: 0; padding: 0 8px;
-  font-size: 40px; line-height: 55px; cursor: pointer; color: $link-color;
+  font-size: 32px; line-height: 56px; cursor: pointer; color: $link-color;
 }
 .icon:focus { outline: 2px solid $link-color; outline-offset: 2px; }
 .icon:hover, .icon:active { color: $link-hover-color; }
@@ -415,4 +414,20 @@ html.dark-mode .topnav-links a.active { color: #7FA8D9; }
 	position: relative;
 	left: 50%; right: 50%;
 	margin-left: -50vw; margin-right: -50vw;
+}
+
+/* ============================================
+   MOBILE OVERRIDES
+   ============================================ */
+
+@media screen and (max-width: 900px) {
+  .mobiledisp { display: block; }
+
+  .site-wrap {
+    flex-direction: column;
+    padding-top: 56px;   /* exactly the height of the fixed mobile bar */
+  }
+  .left-rail { display: none; }
+  .site-wrap main { padding: 15px; width: 100%; }
+  .bio-box { flex-direction: column; text-align: center; }
 }
