@@ -1,20 +1,18 @@
 <div class="topnav-container">
   <nav class="topnav" id="topnav">
-    
 
-<!-- Dark mode toggle button -->
-    <button
-  id="theme-toggle-mobile"
-  class="mobile-toggle theme-toggle"
-  aria-label="Toggle dark mode">
-  <img src="{{ site.baseurl }}/images/moon-icon.svg" class="icon-moon" alt="Dark mode icon">
-  <img src="{{ site.baseurl }}/images/sun-icon.svg" class="icon-sun" alt="Light mode icon">
-</button>
-
-
-    <!-- hamburger -->
+    <!-- hamburger (left) -->
     <button class="icon" aria-expanded="false" aria-controls="myLinks" onclick="toggleMenu(this)">
       &#9776;<span class="sr-only"> Menu</span>
+    </button>
+
+    <!-- dark mode toggle (right) -->
+    <button
+      id="theme-toggle-mobile"
+      class="mobile-toggle theme-toggle"
+      aria-label="Toggle dark mode">
+      <img src="{{ site.baseurl }}/images/moon-icon.svg" class="icon-moon" alt="Dark mode icon">
+      <img src="{{ site.baseurl }}/images/sun-icon.svg" class="icon-sun" alt="Light mode icon">
     </button>
   </nav>
 
@@ -23,6 +21,7 @@
   	<a href="{{ site.url }}" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
     <a href="{{ site.url }}/about/" {% if page.url contains "/about" %}class="active"{% endif %}>About</a>
     <a href="{{ site.url }}/projects/" {% if page.url contains "/projects" %}class="active"{% endif %}>Projects</a>
+    <a href="{{ site.url }}/presentations/" {% if page.url contains "/presentations" %}class="active"{% endif %}>Presentations</a>
     <a href="{{ site.url }}/teaching/" {% if page.url contains "/teaching" %}class="active"{% endif %}>Teaching</a>
     <a href="{{ site.url }}/outreach/" {% if page.url contains "/outreach" %}class="active"{% endif %}>Outreach</a>
     <a href="{{ site.url }}/misc/" {% if page.url contains "/misc" %}class="active"{% endif %}>Misc</a>
@@ -31,7 +30,7 @@
 
   <div class="grey-bar"></div>
 </div>
-<br><br> 
+<br><br>
 
 <script>
   function toggleMenu(btn) {

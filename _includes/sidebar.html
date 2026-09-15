@@ -1,42 +1,14 @@
 <aside class="left-rail">
-  <div class="rail-inner">
-
-    <a href="{{ site.url }}"><img src="{{ site.url }}/images/jwuwong_headshot.jpg" class="rail-photo" alt="Jonathan WuWong"></a>
-
-    <div class="rail-name">
-      <a href="{{ site.url }}">Jonathan WuWong<br>黃樹賢</a>
-    </div>
-
-    <div class="rail-keywords">
-      Sociolinguistics &middot; Language Contact &middot; Immigration
-    </div>
-
-    <nav class="rail-nav">
-      <ul>
-        <li><a href="{{ site.url }}/about/" {% if page.url contains "/about" %}class="active"{% endif %}>About</a></li>
-        <li><a href="{{ site.url }}/projects/" {% if page.url contains "/projects" %}class="active"{% endif %}>Projects</a></li>
-        <li><a href="{{ site.url }}/presentations/" {% if page.url contains "/presentations" %}class="active"{% endif %}>Presentations</a></li>
-        <li><a href="{{ site.url }}/teaching/" {% if page.url contains "/teaching" %}class="active"{% endif %}>Teaching</a></li>
-        <li><a href="{{ site.url }}/outreach/" {% if page.url contains "/outreach" %}class="active"{% endif %}>Outreach</a></li>
-        <li><a href="{{ site.url }}/misc/" {% if page.url contains "/misc" %}class="active"{% endif %}>Misc</a></li>
-        <li><a href="{{ site.url }}/pdfs/cv_wuwong.pdf">CV</a></li>
-      </ul>
-    </nav>
-
-    <div class="rail-contact">
-      <script>
-      const e = "jwuwong" + "@" + "stanford.edu";
-      document.write(`<a href="mailto:${e}">${e}</a>`);
-      </script> <br>
-      <a href="https://scholar.google.com/citations?user=8Es-1_YAAAAJ" target="_blank" rel="noopener">Google Scholar</a> <br>
-      <a href="https://github.com/jwuwong" target="_blank" rel="noopener">GitHub</a> <br>
-      <a href="https://linguistics.stanford.edu/people/graduate-students" target="_blank" rel="noopener">Stanford Linguistics</a>
-    </div>
-
-    <button id="theme-toggle-desktop" class="theme-toggle" aria-label="Toggle dark mode">
-      <img src="{{ site.baseurl }}/images/moon-icon.svg" class="icon-moon" alt="Dark mode icon">
-      <img src="{{ site.baseurl }}/images/sun-icon.svg" class="icon-sun" alt="Light mode icon">
-    </button>
-
-  </div>
+  <nav class="rail-nav">
+    <ul>
+      <li><a href="{{ site.url }}" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
+      <li><a href="{{ site.url }}/about/" {% if page.url contains "/about" %}class="active"{% endif %}>About</a></li>
+      <li><a href="{{ site.url }}/projects/" {% if page.url contains "/projects" %}class="active"{% endif %}>Projects</a></li>
+      <li><a href="{{ site.url }}/presentations/" {% if page.url contains "/presentations" %}class="active"{% endif %}>Presentations</a></li>
+      <li><a href="{{ site.url }}/teaching/" {% if page.url contains "/teaching" %}class="active"{% endif %}>Teaching</a></li>
+      <li><a href="{{ site.url }}/outreach/" {% if page.url contains "/outreach" %}class="active"{% endif %}>Outreach</a></li>
+      <li><a href="{{ site.url }}/misc/" {% if page.url contains "/misc" %}class="active"{% endif %}>Misc</a></li>
+      <li><a href="{{ site.url }}/pdfs/cv_wuwong.pdf">CV</a></li>
+    </ul>
+  </nav>
 </aside>

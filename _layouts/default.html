@@ -3,13 +3,18 @@
 {% include head.html %}
 
 <body>
-  <!-- Mobile top bar (hamburger) -->
+  <!-- Mobile top bar (hamburger left, toggle right) -->
   <div class="mobileonly">
     {% unless page.exclude %}{% include header_mobile.html %}{% endunless %}
   </div>
 
+  <!-- Desktop top bar (name left, toggle right) -->
+  <div class="desktoponly">
+    {% unless page.exclude %}{% include topbar.html %}{% endunless %}
+  </div>
+
   <div class="site-wrap">
-    <!-- Persistent left rail -->
+    <!-- Persistent left nav rail -->
     <div class="desktoponly">
       {% unless page.exclude %}{% include sidebar.html %}{% endunless %}
     </div>
